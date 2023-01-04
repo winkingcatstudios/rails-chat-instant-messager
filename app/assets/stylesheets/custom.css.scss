@@ -7,3 +7,15 @@
 .main-container {
   padding-top: 100px;
 }
+
+#messages {
+  height: 15em;
+  overflow: auto;
+}
+
+
+.input {
+  button {
+    display: none;
+  }
+}

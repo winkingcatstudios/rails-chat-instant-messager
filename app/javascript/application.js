@@ -4,6 +4,25 @@ import "controllers";
 import * as jquery from "jquery";
 import "semantic-ui";
 
+window.scroll_bottom = function () {
+  if ($("#messages").length > 0) {
+    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+  }
+};
+
+var textfield = document.getElementById("message_body");
+
+textfield.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    e.target.value = "";
+  }
+});
+
 $(document).on("turbo:load", function () {
   $(".ui.dropdown").dropdown();
+  $(".message .close").on("click", function () {
+    $(this).closest(".message").transition("fade");
+  });
+  scroll_bottom();
 });
+import "channels";
